@@ -1,0 +1,149 @@
+.container {
+  width: 95%;
+  margin: 1rem auto;
+  background-color: white;
+  border-radius: 15px;
+  padding: 2rem;
+}
+
+.container .poll .text-box {
+  background-color: rgba(165, 139, 189, 0.452);
+  padding: 15px;
+  border-radius: 15px;
+}
+
+.container .poll .poll-box {
+  margin-top: 1rem;
+}
+
+.container .poll .poll-box p {
+  background-color: bisque;
+  padding: 8px;
+  border-radius: 15px;
+  width: 380px;
+  margin: 1rem auto;
+  text-align: center;
+}
+
+.container .poll .poll-box .icones {
+  text-align: center;
+  margin-bottom: 2rem;
+}
+
+.container .poll .poll-box .icones i {
+  font-size: 50px;
+  cursor: pointer;
+  margin-left: 1rem;
+  color: #d1d6db;
+}
+
+.container .poll .poll-box .answer {
+  width: 95%;
+}
+
+.container .poll .poll-box .answer .btn {
+  border: 1px solid #c1c6cc;
+  background-color: white;
+  padding: 5px;
+  border-radius: 5px;
+  border-bottom: none;
+  border-bottom-left-radius: 0;
+  border-bottom-right-radius: 0;
+  cursor: pointer;
+}
+
+.container .poll .poll-box .answer .answer-Selection {
+  border: 1px solid #c1c6cc;
+  border-radius: 5px;
+  border-top-right-radius: 0;
+}
+
+.container .poll .poll-box .answer .answer-Selection .positive-answer-Selection ul {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  list-style: none;
+  -ms-flex-pack: distribute;
+      justify-content: space-around;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -ms-flex-wrap: wrap;
+      flex-wrap: wrap;
+  width: 95%;
+  padding: 10px;
+}
+
+.container .poll .poll-box .answer .answer-Selection .positive-answer-Selection ul li {
+  margin-top: 0.5rem;
+  padding: 8px 5px;
+  background-color: #f3f5f6;
+  border-radius: 8px;
+  cursor: pointer;
+}
+
+.container .poll .poll-box .answer .answer-Selection .negative-answer-Selection ul {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  list-style: none;
+  -ms-flex-pack: distribute;
+      justify-content: space-around;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -ms-flex-wrap: wrap;
+      flex-wrap: wrap;
+  width: 95%;
+  padding: 10px;
+}
+
+.container .poll .poll-box .answer .answer-Selection .negative-answer-Selection ul li {
+  margin-top: 0.5rem;
+  padding: 8px 5px;
+  background-color: #f3f5f6;
+  border-radius: 8px;
+  cursor: pointer;
+}
+
+.container .poll .poll-box .answer #text-area {
+  margin-top: 1rem;
+  width: 100%;
+  border: 1px solid #c1c6cc;
+  border-radius: 5px;
+}
+
+.container .poll .poll-box .answer #text-area::-webkit-input-placeholder {
+  padding: 5px;
+}
+
+.container .poll .poll-box .answer #text-area:-ms-input-placeholder {
+  padding: 5px;
+}
+
+.container .poll .poll-box .answer #text-area::-ms-input-placeholder {
+  padding: 5px;
+}
+
+.container .poll .poll-box .answer #text-area::placeholder {
+  padding: 5px;
+}
+
+.container .poll .poll-box .answer #text-area:focus {
+  border: 2px solid rgba(153, 103, 201, 0.452);
+}
+
+.container .poll .poll-box .answer #submit-btn {
+  text-align: center;
+}
+
+.container .poll .poll-box .answer #submit-btn #submit {
+  color: white;
+  background-color: #28a745;
+  padding: 7px 15px;
+  border-radius: 5px;
+  border: none;
+  cursor: pointer;
+  margin: 1rem 0;
+}
+/*# sourceMappingURL=App.css.map */

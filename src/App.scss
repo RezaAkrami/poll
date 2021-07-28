@@ -1,0 +1,128 @@
+.container{
+    width: 95%;
+    margin: 1rem auto;
+    background-color: white;
+    border-radius: 15px;
+    padding: 2rem;
+    .poll{
+
+        .text-box{
+            background-color: rgba(165, 139, 189, 0.452);
+            padding: 15px;
+            border-radius: 15px;
+        }
+
+        .poll-box{
+            margin-top: 1rem;
+            p{
+                background-color: bisque;
+                padding: 8px;
+                border-radius: 15px;
+                width: 380px;
+                margin: 1rem auto;
+                text-align: center;
+            }
+
+            .icones{
+                text-align: center;
+                i{
+                    font-size: 50px;
+                    cursor: pointer;
+                    margin-left: 1rem;
+                    color: #d1d6db;
+                }
+                margin-bottom: 2rem;
+            }
+
+            .answer{
+                width: 95%;
+                .btn{
+                    border: 1px solid#c1c6cc;
+                    background-color: white;
+                    padding: 5px;
+                    border-radius: 5px;
+                    border-bottom: none;
+                    border-bottom-left-radius: 0;
+                    border-bottom-right-radius: 0;
+                    cursor: pointer;
+                }
+                .positive-btn{
+                    
+                }
+                .negative-btn{
+
+                }
+                .answer-Selection{
+                    border: 1px solid#c1c6cc;
+                    border-radius: 5px;
+                    border-top-right-radius: 0;
+                    .positive-answer-Selection{
+                        ul{
+                            display: flex;
+                            list-style: none;
+                            justify-content: space-around;
+                            align-items: center;
+                            flex-wrap: wrap;
+                            width: 95%;
+                            padding: 10px;
+                            li{
+                                margin-top: 0.5rem;
+                                padding: 8px 5px;
+                                background-color:#f3f5f6;
+                                border-radius: 8px;
+                                cursor: pointer;
+                            }
+                        }
+                    }
+
+                    .negative-answer-Selection{
+                        ul{
+                            display: flex;
+                            list-style: none;
+                            justify-content: space-around;
+                            align-items: center;
+                            flex-wrap: wrap;
+                            width: 95%;
+                            padding: 10px;
+                            li{
+                                margin-top: 0.5rem;
+                                padding: 8px 5px;
+                                background-color:#f3f5f6;
+                                border-radius: 8px;
+                                cursor: pointer;
+                            }
+                        }
+                    }
+                }
+
+                #text-area{
+                    margin-top: 1rem;
+                    width: 100%;
+                    border: 1px solid#c1c6cc;
+                    border-radius: 5px;
+
+                    &::placeholder{
+                       padding: 5px;
+                    }
+
+                    &:focus{
+                        border: 2px solid rgba(153, 103, 201, 0.452);
+                    }
+                }
+
+                #submit-btn{
+                    text-align: center;
+                    #submit{
+                        color: white;
+                        background-color: #28a745;
+                        padding: 7px 15px;
+                        border-radius: 5px;
+                        border: none;
+                        cursor: pointer;
+                        margin: 1rem 0;
+                    }
+                }
+            }
+        }
+    }
+}
