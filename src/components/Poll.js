@@ -24,32 +24,41 @@ const Poll = () => {
             frown.style.color="#d1d6db";
             angry.style.color="#d1d6db";
             target.style.color="green";
+            answer.emoji="5";
+            setAnswer({...answer});
         }else if(target.classList.contains('fa-smile-beam')){
             grinHearts.style.color="#d1d6db";
             meh.style.color="#d1d6db";
             frown.style.color="#d1d6db";
             angry.style.color="#d1d6db";
             target.style.color="blue";
+            answer.emoji="4";
+            setAnswer({...answer});
         }else if(target.classList.contains('fa-meh')){
             grinHearts.style.color="#d1d6db";
             smileBeam.style.color="#d1d6db";
             frown.style.color="#d1d6db";
             angry.style.color="#d1d6db";
             target.style.color="black";
+            answer.emoji="3";
+            setAnswer({...answer});
         }else if(target.classList.contains('fa-frown')){
             grinHearts.style.color="#d1d6db";
             smileBeam.style.color="#d1d6db";
             meh.style.color="#d1d6db";
             angry.style.color="#d1d6db";
             target.style.color="yellow";
+            answer.emoji="2";
+            setAnswer({...answer});
         }else if(target.classList.contains('fa-angry')){
             grinHearts.style.color="#d1d6db";
             smileBeam.style.color="#d1d6db";
             meh.style.color="#d1d6db";
             frown.style.color="#d1d6db";
             target.style.color="red";
+            answer.emoji="1";
+            setAnswer({...answer});
         }
-        
     }
 
     // show  positive or negative answer Selection
@@ -62,6 +71,46 @@ const Poll = () => {
         setShowBtn(false);
     }
 
+    // Receive user input information
+    let [answer,setAnswer] = useState({
+
+        emoji:"",
+        positivePoints:[],
+        negativePoints:[],
+        description:"",
+
+    })
+
+    const positiveOrNegativePoints = (sign,id)=>{
+        if(sign==="positive"){
+
+            let item = answer.positivePoints.indexOf(id);
+            if(item<0){
+                answer.positivePoints.push(id);
+                setAnswer({...answer});
+            }else{
+                answer.positivePoints.splice(item,1);
+                setAnswer({...answer});
+            }
+            console.log(answer.positivePoints);
+        }else{
+            let item = answer.negativePoints.indexOf(id);
+            if(item<0){
+                answer.negativePoints.push(id);
+                setAnswer({...answer});
+            }else{
+                answer.negativePoints.splice(item,1);
+                setAnswer({...answer});
+            }
+            console.log(answer.negativePoints);
+        }
+    }
+
+    // text Area value
+    let textArea = (e)=>{
+        answer.description=e.target.value;
+        setAnswer({...answer});
+    }
     return (
         <div>
             <div className="container">
@@ -88,29 +137,29 @@ const Poll = () => {
                                 {showBtn ? 
                                     <div className="positive-answer-Selection">
                                         <ul>
-                                            <li>پاسخگویی سریع</li>
-                                            <li>پاسخ تخصصی</li>
-                                            <li>قیمت مناسب</li>
-                                            <li>رفتار محترمانه</li>
-                                            <li>خدمات با کیفیت</li>
-                                            <li>رفتار مناسب</li>
+                                            <li onClick={positiveOrNegativePoints.bind(this,"positive",1)}>پاسخگویی سریع</li>
+                                            <li onClick={positiveOrNegativePoints.bind(this,"positive",2)}>پاسخ تخصصی</li>
+                                            <li onClick={positiveOrNegativePoints.bind(this,"positive",3)}>قیمت مناسب</li>
+                                            <li onClick={positiveOrNegativePoints.bind(this,"positive",4)}>رفتار محترمانه</li>
+                                            <li onClick={positiveOrNegativePoints.bind(this,"positive",5)}>خدمات با کیفیت</li>
+                                            <li onClick={positiveOrNegativePoints.bind(this,"positive",6)}>رفتار مناسب</li>
                                         </ul>
                                     </div>
                                     :
                                     <div className="negative-answer-Selection">
                                         <ul>
-                                            <li>پاسخگویی طولانی</li>
-                                            <li>پاسخ غیر تخصصی</li>
-                                            <li>قیمت نامناسب</li>
-                                            <li>رفتار نامحترمانه</li>
-                                            <li>خدمات بی کیفیت</li>
-                                            <li>رفتار نامناسب</li>
+                                            <li onClick={positiveOrNegativePoints.bind(this,"negative",1)}>پاسخگویی طولانی</li>
+                                            <li onClick={positiveOrNegativePoints.bind(this,"negative",2)}>پاسخ غیر تخصصی</li>
+                                            <li onClick={positiveOrNegativePoints.bind(this,"negative",3)}>قیمت نامناسب</li>
+                                            <li onClick={positiveOrNegativePoints.bind(this,"negative",4)}>رفتار نامحترمانه</li>
+                                            <li onClick={positiveOrNegativePoints.bind(this,"negative",5)}>خدمات بی کیفیت</li>
+                                            <li onClick={positiveOrNegativePoints.bind(this,"negative",6)}>رفتار نامناسب</li>
                                         </ul>
                                     </div>
                                 }
                                 
                             </div>
-                            <textarea id="text-area"  rows="10" placeholder="متن خود را وارد کنید ..."></textarea>
+                            <textarea id="text-area"  rows="10" placeholder="متن خود را وارد کنید ..." onChange={textArea} value={answer.description}></textarea>
                             <div id="submit-btn">
                                 <button id="submit">ثبت نظرسنجی</button>
                             </div>
