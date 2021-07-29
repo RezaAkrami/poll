@@ -81,28 +81,34 @@ const Poll = () => {
 
     })
 
-    const positiveOrNegativePoints = (sign,id)=>{
+    const positiveOrNegativePoints = (sign,id,e)=>{
         if(sign==="positive"){
 
             let item = answer.positivePoints.indexOf(id);
             if(item<0){
                 answer.positivePoints.push(id);
                 setAnswer({...answer});
+                e.target.style.backgroundColor="#9ee7a4";
+                e.target.style.color="rgb(85, 85, 85)";
             }else{
                 answer.positivePoints.splice(item,1);
                 setAnswer({...answer});
+                e.target.style.backgroundColor="white";
+                e.target.style.color="black";
             }
-            console.log(answer.positivePoints);
         }else{
             let item = answer.negativePoints.indexOf(id);
             if(item<0){
                 answer.negativePoints.push(id);
                 setAnswer({...answer});
+                e.target.style.backgroundColor="#f08080";
+                e.target.style.color="rgb(85, 85, 85)";
             }else{
                 answer.negativePoints.splice(item,1);
                 setAnswer({...answer});
+                e.target.style.backgroundColor="white";
+                e.target.style.color="black";
             }
-            console.log(answer.negativePoints);
         }
     }
 
@@ -111,6 +117,18 @@ const Poll = () => {
         answer.description=e.target.value;
         setAnswer({...answer});
     }
+
+    // show message after submited form
+    const submitBtn = (e)=>{
+        e.preventDefault();
+        let ms=document.querySelector('#message');
+        ms.style.display="block";
+        console.log(answer);
+        setTimeout(() => {
+            ms.style.display="none";
+        }, 2000);
+    }
+
     return (
         <div>
             <div className="container">
@@ -158,12 +176,14 @@ const Poll = () => {
                                     </div>
                                 }
                                 
-                            </div>
-                            <textarea id="text-area"  rows="10" placeholder="متن خود را وارد کنید ..." onChange={textArea} value={answer.description}></textarea>
-                            <div id="submit-btn">
-                                <button id="submit">ثبت نظرسنجی</button>
-                            </div>
-                        </div> : null}
+                                </div>
+                                <textarea id="text-area"  rows="10" placeholder="متن خود را وارد کنید ..." onChange={textArea} value={answer.description}></textarea>
+                                <div id="submit-btn">
+                                    <button id="submit" onClick={submitBtn}>ثبت نظرسنجی</button>
+                                </div>
+                                <p id="message">پاسخ شما ثبت گردید .</p>
+                            </div> 
+                        : null}
                     </div>
                 </div>
             </div>

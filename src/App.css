@@ -154,4 +154,11 @@
   cursor: pointer;
   margin: 1rem 0;
 }
+
+.container .poll .poll-box .answer #message {
+  background-color: #28a745;
+  width: 200px;
+  color: white;
+  display: none;
+}
 /*# sourceMappingURL=App.css.map */
